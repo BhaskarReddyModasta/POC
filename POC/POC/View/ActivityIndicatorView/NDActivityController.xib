@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NDActivityController" customModule="MLM" customModuleProvider="target">
+            <connections>
+                <outlet property="loadingLabel" destination="XEx-IR-rFk" id="coY-0u-twy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ljZ-d8-XP2">
+                    <rect key="frame" x="143" y="296.5" width="90" height="75"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XEx-IR-rFk">
+                            <rect key="frame" x="8" y="65" width="74" height="0.0"/>
+                            <fontDescription key="fontDescription" name="HelveticaNeue-MediumItalic" family="Helvetica Neue" pointSize="14"/>
+                            <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="zVM-MO-LYa">
+                            <rect key="frame" x="27" y="18" width="37" height="37"/>
+                            <color key="color" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        </activityIndicatorView>
+                    </subviews>
+                    <color key="backgroundColor" red="0.99607843137254903" green="0.8666666666666667" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="XEx-IR-rFk" firstAttribute="centerX" secondItem="zVM-MO-LYa" secondAttribute="centerX" id="0U6-wS-Ffx"/>
+                        <constraint firstAttribute="width" constant="90" id="0eh-SL-1Sg"/>
+                        <constraint firstAttribute="trailing" secondItem="XEx-IR-rFk" secondAttribute="trailing" constant="8" id="9EN-eX-Sib"/>
+                        <constraint firstItem="XEx-IR-rFk" firstAttribute="leading" secondItem="ljZ-d8-XP2" secondAttribute="leading" constant="8" id="Yua-B4-YFy"/>
+                        <constraint firstItem="zVM-MO-LYa" firstAttribute="top" secondItem="ljZ-d8-XP2" secondAttribute="top" constant="18" id="fAF-k3-NIi"/>
+                        <constraint firstItem="XEx-IR-rFk" firstAttribute="top" secondItem="zVM-MO-LYa" secondAttribute="bottom" constant="10" id="tRG-xM-5hD"/>
+                        <constraint firstAttribute="bottom" secondItem="XEx-IR-rFk" secondAttribute="bottom" constant="10" id="uYR-s1-N9A"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.13949353448275867" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="ljZ-d8-XP2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="E8Y-SO-KBB"/>
+                <constraint firstItem="ljZ-d8-XP2" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="x7R-Dw-V6G"/>
+            </constraints>
+        </view>
+    </objects>
+</document>
