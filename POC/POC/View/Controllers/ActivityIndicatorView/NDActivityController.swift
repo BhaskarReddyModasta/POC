@@ -1,11 +1,10 @@
 //
 //  NDActivityController.swift
-//  Demo
+//  POC
 //
-//  Created by Shiv on  27/03/17.
-//  Copyright © 2017 Owner. All rights reserved.
+//  Created by Admin on 14/06/18.
+//  Copyright © 2018 Bhaskar. All rights reserved.
 //
-
 import UIKit
 
 internal class NDActivityController: UIViewController {
@@ -20,7 +19,6 @@ internal class NDActivityController: UIViewController {
         }
     }
     // MARK: Activity loading functions
-    
     func startActivity(target: UIViewController) {
         view.removeFromSuperview()
         view.frame = CGRect(x: 0, y:0, width: target.view.frame.width, height: target.view.bounds.height)

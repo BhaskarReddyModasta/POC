@@ -189,9 +189,8 @@
 		8439D4CE20D1122E002FC9C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				843E8B1220D385FA008981E8 /* ActivityIndicatorView */,
-				8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */,
-				8439D4D420D14DAD002FC9C4 /* CellView.swift */,
+				843E8B1B20D39195008981E8 /* Views */,
+				843E8B1A20D3917E008981E8 /* Controllers */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -220,6 +219,24 @@
 				847D00E320D24F8000B25073 /* Utilities.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		843E8B1A20D3917E008981E8 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */,
+				843E8B1220D385FA008981E8 /* ActivityIndicatorView */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		843E8B1B20D39195008981E8 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8439D4D420D14DAD002FC9C4 /* CellView.swift */,
+			);
+			name = Views;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 		84E1ED6520D198D4005A9FF9 /* APIClient */ = {

@@ -12,7 +12,6 @@ class DashBoardViewModel {
     var apiClient = APIClient()
     var navigationBarTitle: String?
     var rowsListArray:[RowsList] = [RowsList]()
-
     // - This function is what directly accesses the apiClient to make the API call
     func getbrandsAndSubbrands(urlString: String, completion: @escaping (_ isSuccess: Bool?,
         _ error: String?) -> Void) {

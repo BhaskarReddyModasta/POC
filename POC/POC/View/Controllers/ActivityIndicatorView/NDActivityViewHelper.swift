@@ -1,9 +1,9 @@
 //
-//  NDActivityViewHelper.swift
-//  Demo
+//  NDActivityController.swift
+//  POC
 //
-//  Created by FREEMIND on 27/03/17.
-//  Copyright © 2017 Owner. All rights reserved.
+//  Created by Admin on 14/06/18.
+//  Copyright © 2018 Bhaskar. All rights reserved.
 //
 
 import UIKit

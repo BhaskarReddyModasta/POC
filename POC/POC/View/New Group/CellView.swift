@@ -50,7 +50,5 @@ class CellView: UIView {
         self.gridDescriptionLabel.numberOfLines = 0
         self.bgView.addSubview(self.gridDescriptionLabel)
         self.addSubview(self.bgView)
-
     }
-
 }

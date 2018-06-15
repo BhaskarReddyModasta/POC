@@ -24,9 +24,6 @@ class DashboardViewController: UIViewController {
         self.navigationItem.title = "POC"
         self.navigationController?.navigationBar.backgroundColor = .lightGray
         self.view.backgroundColor = .white
-        //let testUIBarButtonItem = UIBarButtonItem(image: UIImage(named: "refreshIcon.png"), style: .plain, target: self, action: #selector(self.clickButton))
-      //  self.navigationItem.rightBarButtonItem  = testUIBarButtonItem
-       // navigationItem.rightBarButtonItems = [testUIBarButtonItem]
         refresh = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(self.clickButton))
         refresh.isEnabled = false
         navigationItem.rightBarButtonItems = [refresh]
