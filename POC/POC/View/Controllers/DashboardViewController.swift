@@ -11,10 +11,11 @@ import SDWebImage
 
 class DashboardViewController: UIViewController {
 
-    var listTableView = UITableView()
-    var viewModel = DashBoardViewModel()
-    var refresh = UIBarButtonItem()
-    var activityView = NDActivityViewHelper()
+    fileprivate let cellIdentifier = "cellid"
+    fileprivate let listTableView = UITableView()
+    fileprivate var viewModel = DashBoardViewModel()
+    fileprivate var refresh = UIBarButtonItem()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSetUp()
@@ -33,27 +34,30 @@ class DashboardViewController: UIViewController {
     }
     // MARK: - Make api request
     func makeApiRequest() {
-        activityView.startActivity(target: self)
+        let sv = UIViewController.displaySpinner(onView: self.view)
         viewModel.getbrandsAndSubbrands(urlString: Constants().apiEndPoint) { [weak self] (isSuccess, error) in
-            self?.activityView.stopActivity()
+            UIViewController.removeSpinner(spinner: sv)
             self?.refresh.isEnabled = true
             if isSuccess! {
                 self?.navigationItem.title = self?.viewModel.loadNavigationBarTitle()
-                self?.loadTableView()
+                self?.configureTableView()
             }else {
                 // pop error alert
             }
         }
     }
-    func loadTableView() {
-        listTableView.frame = CGRect(x: 0, y:  (self.navigationController?.navigationBar.frame.size.height)!, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 44); //self.view.frame
-        listTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
-        listTableView.delegate = self
+    func configureTableView() {
         listTableView.dataSource = self
-        listTableView.separatorColor = .clear
-        listTableView.allowsSelection = false
-        listTableView.register(UITableViewCell.self, forCellReuseIdentifier:"cellid")
-        self.view.addSubview(listTableView)
+        listTableView.estimatedRowHeight = 100
+        listTableView.rowHeight = UITableViewAutomaticDimension
+        listTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cellid")
+        
+        view.addSubview(listTableView)
+        listTableView.translatesAutoresizingMaskIntoConstraints = false
+        listTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        listTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        listTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        listTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,39 +67,25 @@ class DashboardViewController: UIViewController {
 // MARK: - UITableView Delegate and datasource
 extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        let height = viewModel.heightForView(text: viewModel.getDescription(indexpath: indexPath)!, font: setFont(), width: UIScreen.main.bounds.width)
-        return 250 + 45 + height
-    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellid", for: indexPath)
+
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)  as! CustomTableViewCell
         cell.backgroundColor = .white
-        let height = viewModel.heightForView(text: viewModel.getDescription(indexpath: indexPath)!, font: setFont(), width: UIScreen.main.bounds.width)
-        let cellView = CellView()
-        cellView.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 250 + 45 + height)
-        cellView.loadView(frame: cellView.frame)
         if let imageUrl = viewModel.getImageUrl(indexpath: indexPath){
-            cellView.gridImgView.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named:"placeHolder.png"))
+            cell.imageViewCustom.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named:"placeHolder.png"))
         }else {
-            cellView.gridImgView.image = UIImage(named: "placeHolder.png")
+            cell.imageViewCustom.image = UIImage(named: "placeHolder.png")
         }
-        cellView.gridLabel.text = viewModel.getTitle(indexpath: indexPath)
-        cellView.gridDescriptionLabel.text = viewModel.getDescription(indexpath: indexPath)
-        cell.bringSubview(toFront: cellView)
-        cell.addSubview(cellView)
+        cell.detailLabel.text = viewModel.getTitleAndDescription(indexpath: indexPath)
         return cell
     }
-
-    func setFont() -> UIFont {
-        return UIFont(name: "Helvetica", size: 20.0)!
-    }
+    
     override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
-        listTableView.reloadData()
     }
 
 }

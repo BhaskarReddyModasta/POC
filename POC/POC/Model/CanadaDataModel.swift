@@ -8,12 +8,12 @@
 
 import Foundation
 internal class CanadaDataModel {
-    let title              :String?
+    let title               :String?
     let rowsList            :[Dictionary<String, Any>]?
     var rowsListArray:[RowsList] = [RowsList]()
     init(json : Dictionary<String, Any>?) {
-        self.title = json!["title"] as? String
-        self.rowsList = json!["rows"] as? [Dictionary<String, Any>]
+        self.title      = json!["title"] as? String
+        self.rowsList   = json!["rows"] as? [Dictionary<String, Any>]
         for item in (self.rowsList)! {
             let value = RowsList.init(json:item)
             self.rowsListArray.append(value)
@@ -28,12 +28,12 @@ internal class CanadaDataModel {
 }
 internal struct RowsList {
     let title              :String?
-    let description        : String?
+    let description        :String?
     let imageHref          :String?
 
     init(json : Dictionary<String, Any>?) {
-            self.title = json!["title"] as? String ?? ""
-            self.description = json!["description"] as? String ?? "Description not available"
-            self.imageHref = json!["imageHref"] as? String ?? ""
+            self.title          = json!["title"] as? String ?? ""
+            self.description    = json!["description"] as? String ?? ""
+            self.imageHref      = json!["imageHref"] as? String ?? ""
     }
 }

@@ -12,7 +12,7 @@ class DashBoardViewModel {
     var apiClient = APIClient()
     var navigationBarTitle: String?
     var rowsListArray:[RowsList] = [RowsList]()
-    // - This function is what directly accesses the apiClient to make the API call
+    // This function is what directly accesses the apiClient to make the API call
     func getbrandsAndSubbrands(urlString: String, completion: @escaping (_ isSuccess: Bool?,
         _ error: String?) -> Void) {
         // call on the apiClient to fetch the Title and rows List
@@ -35,22 +35,10 @@ class DashBoardViewModel {
     func numberOfRowsCount() -> Int {
         return self.rowsListArray.count
     }
-    func getTitle(indexpath: IndexPath) -> String? {
-        return self.rowsListArray[indexpath.row].title
-    }
-    func getDescription(indexpath: IndexPath) -> String? {
-        return self.rowsListArray[indexpath.row].description
+    func getTitleAndDescription(indexpath: IndexPath) -> String? {
+        return ("\n" + self.rowsListArray[indexpath.row].title! + "\n" + self.rowsListArray[indexpath.row].description!)
     }
     func getImageUrl(indexpath: IndexPath) -> String? {
         return self.rowsListArray[indexpath.row].imageHref
-    }
-    func heightForView(text:String, font:UIFont, width:CGFloat) -> CGFloat{
-        let label:UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: CGFloat.greatestFiniteMagnitude))
-        label.numberOfLines = 0
-        label.lineBreakMode = NSLineBreakMode.byWordWrapping
-        label.font = font
-        label.text = text
-        label.sizeToFit()
-        return label.frame.height
     }
 }

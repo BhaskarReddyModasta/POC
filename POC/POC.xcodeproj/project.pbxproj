@@ -17,11 +17,9 @@
 		8439D4BA20D10E39002FC9C4 /* POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4B920D10E39002FC9C4 /* POCUITests.swift */; };
 		8439D4D120D112D3002FC9C4 /* CanadaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D020D112D3002FC9C4 /* CanadaDataModel.swift */; };
 		8439D4D320D11D33002FC9C4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */; };
-		8439D4D520D14DAD002FC9C4 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D420D14DAD002FC9C4 /* CellView.swift */; };
+		843C683720D73E4A00D27EB5 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683620D73E4A00D27EB5 /* Extention.swift */; };
+		843C683B20D751A100D27EB5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */; };
 		843E8B1120D37E55008981E8 /* refreshIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 843E8B1020D37E55008981E8 /* refreshIcon.png */; };
-		843E8B1620D385FB008981E8 /* NDActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8B1320D385FA008981E8 /* NDActivityController.swift */; };
-		843E8B1720D385FB008981E8 /* NDActivityController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843E8B1420D385FA008981E8 /* NDActivityController.xib */; };
-		843E8B1820D385FB008981E8 /* NDActivityViewHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843E8B1520D385FA008981E8 /* NDActivityViewHelper.swift */; };
 		847D00E420D24F8300B25073 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D00E320D24F8000B25073 /* Utilities.swift */; };
 		847D00E620D2C59B00B25073 /* placeHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 847D00E520D2C59B00B25073 /* placeHolder.png */; };
 		84E1ED6720D19965005A9FF9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6620D19965005A9FF9 /* APIClient.swift */; };
@@ -62,11 +60,9 @@
 		8439D4BB20D10E39002FC9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8439D4D020D112D3002FC9C4 /* CanadaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaDataModel.swift; sourceTree = "<group>"; };
 		8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
-		8439D4D420D14DAD002FC9C4 /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		843C683620D73E4A00D27EB5 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		843E8B1020D37E55008981E8 /* refreshIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshIcon.png; sourceTree = "<group>"; };
-		843E8B1320D385FA008981E8 /* NDActivityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDActivityController.swift; sourceTree = "<group>"; };
-		843E8B1420D385FA008981E8 /* NDActivityController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NDActivityController.xib; sourceTree = "<group>"; };
-		843E8B1520D385FA008981E8 /* NDActivityViewHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NDActivityViewHelper.swift; sourceTree = "<group>"; };
 		847D00E320D24F8000B25073 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		847D00E520D2C59B00B25073 /* placeHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolder.png; sourceTree = "<group>"; };
 		84E1ED6620D19965005A9FF9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
@@ -203,20 +199,11 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		843E8B1220D385FA008981E8 /* ActivityIndicatorView */ = {
-			isa = PBXGroup;
-			children = (
-				843E8B1320D385FA008981E8 /* NDActivityController.swift */,
-				843E8B1420D385FA008981E8 /* NDActivityController.xib */,
-				843E8B1520D385FA008981E8 /* NDActivityViewHelper.swift */,
-			);
-			path = ActivityIndicatorView;
-			sourceTree = "<group>";
-		};
 		843E8B1920D3867A008981E8 /* Common */ = {
 			isa = PBXGroup;
 			children = (
 				847D00E320D24F8000B25073 /* Utilities.swift */,
+				843C683620D73E4A00D27EB5 /* Extention.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -225,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */,
-				843E8B1220D385FA008981E8 /* ActivityIndicatorView */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -233,7 +219,7 @@
 		843E8B1B20D39195008981E8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8439D4D420D14DAD002FC9C4 /* CellView.swift */,
+				843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */,
 			);
 			name = Views;
 			path = "New Group";
@@ -370,7 +356,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				843E8B1720D385FB008981E8 /* NDActivityController.xib in Resources */,
 				847D00E620D2C59B00B25073 /* placeHolder.png in Resources */,
 				843E8B1120D37E55008981E8 /* refreshIcon.png in Resources */,
 				8439D4A120D10E38002FC9C4 /* Assets.xcassets in Resources */,
@@ -551,14 +536,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				8439D49F20D10E1E002FC9C4 /* POC.xcdatamodeld in Sources */,
-				843E8B1820D385FB008981E8 /* NDActivityViewHelper.swift in Sources */,
-				843E8B1620D385FB008981E8 /* NDActivityController.swift in Sources */,
 				847D00E420D24F8300B25073 /* Utilities.swift in Sources */,
 				84E1ED6720D19965005A9FF9 /* APIClient.swift in Sources */,
 				8439D4D120D112D3002FC9C4 /* CanadaDataModel.swift in Sources */,
-				8439D4D520D14DAD002FC9C4 /* CellView.swift in Sources */,
 				8439D4D320D11D33002FC9C4 /* DashboardViewController.swift in Sources */,
+				843C683B20D751A100D27EB5 /* CustomTableViewCell.swift in Sources */,
 				8439D49720D10E1D002FC9C4 /* AppDelegate.swift in Sources */,
+				843C683720D73E4A00D27EB5 /* Extention.swift in Sources */,
 				84E1ED6920D19B3C005A9FF9 /* DashboardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
