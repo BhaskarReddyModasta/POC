@@ -1,5 +1,5 @@
 //
-//  DashboardViewModel.swift
+//  CanadaListViewModel.swift
 //  POC
 //
 //  Created by Admin on 14/06/18.
@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-class DashBoardViewModel {
+class CanadaListViewModel {
     var apiClient = APIClient()
     var navigationBarTitle: String?
     var rowsListArray:[RowsList] = [RowsList]()
@@ -21,7 +21,7 @@ class DashBoardViewModel {
                 guard let dataDict = rowsList else {
                     return
                 }
-                let value = CanadaDataModel.init(json:dataDict)
+                let value = CanadaListDataModel.init(json:dataDict)
                 self?.navigationBarTitle = value.title
                 self?.rowsListArray = value.rowsListArray
                 completion(isSuccess, error)

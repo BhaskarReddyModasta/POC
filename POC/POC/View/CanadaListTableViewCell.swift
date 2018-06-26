@@ -1,5 +1,5 @@
 //
-//  CellView.swift
+//  CanadaListTableViewCell.swift
 //  POC
 //
 //  Created by Admin on 18/06/18.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CustomTableViewCell: UITableViewCell {
+class CanadaListTableViewCell: UITableViewCell {
 
     let imageViewCustom = UIImageView()
     let detailLabel = UILabel()
@@ -21,12 +21,12 @@ class CustomTableViewCell: UITableViewCell {
         
         // configure imageViewCustom
         contentView.addSubview(imageViewCustom)
-
         imageViewCustom.translatesAutoresizingMaskIntoConstraints = false
+        imageViewCustom.heightAnchor.constraint(equalTo: imageViewCustom.widthAnchor, multiplier: 1.0/2.0).isActive = true
         imageViewCustom.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         imageViewCustom.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         imageViewCustom.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
-        
+
         // configure detailLabel
         contentView.addSubview(detailLabel)
         detailLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -36,9 +36,8 @@ class CustomTableViewCell: UITableViewCell {
         detailLabel.topAnchor.constraint(equalTo: imageViewCustom.bottomAnchor).isActive = true
         detailLabel.numberOfLines = 0
         detailLabel.font = UIFont(name: "AvenirNext-DemiBold", size: 16)
- 
     }
-    
+  
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }

@@ -11,19 +11,16 @@
 		4410F3A011317A0F781E2280 /* Pods_POC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6C83306B5F3AABF3C6D8751 /* Pods_POC.framework */; };
 		58EB31F1623AEE35E3BE7FF4 /* Pods_POCTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DBDA497E200A0313A885C4FE /* Pods_POCTests.framework */; };
 		8439D49720D10E1D002FC9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D49620D10E1D002FC9C4 /* AppDelegate.swift */; };
-		8439D49F20D10E1E002FC9C4 /* POC.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8439D49D20D10E1E002FC9C4 /* POC.xcdatamodeld */; };
 		8439D4A120D10E38002FC9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8439D4A020D10E38002FC9C4 /* Assets.xcassets */; };
 		8439D4AF20D10E39002FC9C4 /* POCTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4AE20D10E38002FC9C4 /* POCTests.swift */; };
 		8439D4BA20D10E39002FC9C4 /* POCUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4B920D10E39002FC9C4 /* POCUITests.swift */; };
-		8439D4D120D112D3002FC9C4 /* CanadaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D020D112D3002FC9C4 /* CanadaDataModel.swift */; };
-		8439D4D320D11D33002FC9C4 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */; };
+		8439D4D120D112D3002FC9C4 /* CanadaListDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8439D4D020D112D3002FC9C4 /* CanadaListDataModel.swift */; };
 		843C683720D73E4A00D27EB5 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683620D73E4A00D27EB5 /* Extention.swift */; };
-		843C683B20D751A100D27EB5 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */; };
-		843E8B1120D37E55008981E8 /* refreshIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = 843E8B1020D37E55008981E8 /* refreshIcon.png */; };
+		843C683E20E24EF200D27EB5 /* CanadaListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683C20E24EF200D27EB5 /* CanadaListTableViewCell.swift */; };
+		843C683F20E24EF200D27EB5 /* CanadaListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 843C683D20E24EF200D27EB5 /* CanadaListViewController.swift */; };
 		847D00E420D24F8300B25073 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D00E320D24F8000B25073 /* Utilities.swift */; };
-		847D00E620D2C59B00B25073 /* placeHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = 847D00E520D2C59B00B25073 /* placeHolder.png */; };
 		84E1ED6720D19965005A9FF9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6620D19965005A9FF9 /* APIClient.swift */; };
-		84E1ED6920D19B3C005A9FF9 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6820D19B3C005A9FF9 /* DashboardViewModel.swift */; };
+		84E1ED6920D19B3C005A9FF9 /* CanadaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6820D19B3C005A9FF9 /* CanadaListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,7 +46,6 @@
 		794D319DE91368EBDB00C335 /* Pods-POCUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POCUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POCUITests/Pods-POCUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8439D49320D10E1D002FC9C4 /* POC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8439D49620D10E1D002FC9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8439D49E20D10E1E002FC9C4 /* POC.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = POC.xcdatamodel; sourceTree = "<group>"; };
 		8439D4A020D10E38002FC9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8439D4A520D10E38002FC9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8439D4AA20D10E38002FC9C4 /* POCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -58,15 +54,13 @@
 		8439D4B520D10E39002FC9C4 /* POCUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = POCUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8439D4B920D10E39002FC9C4 /* POCUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCUITests.swift; sourceTree = "<group>"; };
 		8439D4BB20D10E39002FC9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8439D4D020D112D3002FC9C4 /* CanadaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaDataModel.swift; sourceTree = "<group>"; };
-		8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		8439D4D020D112D3002FC9C4 /* CanadaListDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaListDataModel.swift; sourceTree = "<group>"; };
 		843C683620D73E4A00D27EB5 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
-		843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		843E8B1020D37E55008981E8 /* refreshIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refreshIcon.png; sourceTree = "<group>"; };
+		843C683C20E24EF200D27EB5 /* CanadaListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanadaListTableViewCell.swift; sourceTree = "<group>"; };
+		843C683D20E24EF200D27EB5 /* CanadaListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CanadaListViewController.swift; sourceTree = "<group>"; };
 		847D00E320D24F8000B25073 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
-		847D00E520D2C59B00B25073 /* placeHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = placeHolder.png; sourceTree = "<group>"; };
 		84E1ED6620D19965005A9FF9 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		84E1ED6820D19B3C005A9FF9 /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		84E1ED6820D19B3C005A9FF9 /* CanadaListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanadaListViewModel.swift; sourceTree = "<group>"; };
 		8FCB2FCD5F8FFBA232CD972F /* Pods-POCTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POCTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POCTests/Pods-POCTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0AA89ABC269AA4AC9AACF0F /* Pods-POC.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POC.debug.xcconfig"; path = "Pods/Target Support Files/Pods-POC/Pods-POC.debug.xcconfig"; sourceTree = "<group>"; };
 		B92D2C18FFE5B7624B269282 /* Pods-POCUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-POCUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-POCUITests/Pods-POCUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,17 +135,13 @@
 		8439D49520D10E1D002FC9C4 /* POC */ = {
 			isa = PBXGroup;
 			children = (
-				8439D4CF20D11238002FC9C4 /* ViewModel */,
-				8439D4CE20D1122E002FC9C4 /* View */,
-				8439D4CD20D11223002FC9C4 /* Model */,
-				84E1ED6520D198D4005A9FF9 /* APIClient */,
-				843E8B1920D3867A008981E8 /* Common */,
 				8439D49620D10E1D002FC9C4 /* AppDelegate.swift */,
+				8439D4CE20D1122E002FC9C4 /* View */,
+				8439D4CF20D11238002FC9C4 /* ViewModel */,
+				8439D4CD20D11223002FC9C4 /* Model */,
+				843E8B1920D3867A008981E8 /* Common */,
 				8439D4A020D10E38002FC9C4 /* Assets.xcassets */,
-				847D00E520D2C59B00B25073 /* placeHolder.png */,
-				843E8B1020D37E55008981E8 /* refreshIcon.png */,
 				8439D4A520D10E38002FC9C4 /* Info.plist */,
-				8439D49D20D10E1E002FC9C4 /* POC.xcdatamodeld */,
 			);
 			path = POC;
 			sourceTree = "<group>";
@@ -177,7 +167,8 @@
 		8439D4CD20D11223002FC9C4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				8439D4D020D112D3002FC9C4 /* CanadaDataModel.swift */,
+				84E1ED6620D19965005A9FF9 /* APIClient.swift */,
+				8439D4D020D112D3002FC9C4 /* CanadaListDataModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,8 +176,8 @@
 		8439D4CE20D1122E002FC9C4 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				843E8B1B20D39195008981E8 /* Views */,
-				843E8B1A20D3917E008981E8 /* Controllers */,
+				843C683D20E24EF200D27EB5 /* CanadaListViewController.swift */,
+				843C683C20E24EF200D27EB5 /* CanadaListTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -194,7 +185,7 @@
 		8439D4CF20D11238002FC9C4 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				84E1ED6820D19B3C005A9FF9 /* DashboardViewModel.swift */,
+				84E1ED6820D19B3C005A9FF9 /* CanadaListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -206,31 +197,6 @@
 				843C683620D73E4A00D27EB5 /* Extention.swift */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		843E8B1A20D3917E008981E8 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				8439D4D220D11D32002FC9C4 /* DashboardViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		843E8B1B20D39195008981E8 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				843C683A20D751A000D27EB5 /* CustomTableViewCell.swift */,
-			);
-			name = Views;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
-		84E1ED6520D198D4005A9FF9 /* APIClient */ = {
-			isa = PBXGroup;
-			children = (
-				84E1ED6620D19965005A9FF9 /* APIClient.swift */,
-			);
-			path = APIClient;
 			sourceTree = "<group>";
 		};
 		89EE9E20BF484899CB670545 /* Frameworks */ = {
@@ -356,8 +322,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				847D00E620D2C59B00B25073 /* placeHolder.png in Resources */,
-				843E8B1120D37E55008981E8 /* refreshIcon.png in Resources */,
 				8439D4A120D10E38002FC9C4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -535,15 +499,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8439D49F20D10E1E002FC9C4 /* POC.xcdatamodeld in Sources */,
 				847D00E420D24F8300B25073 /* Utilities.swift in Sources */,
 				84E1ED6720D19965005A9FF9 /* APIClient.swift in Sources */,
-				8439D4D120D112D3002FC9C4 /* CanadaDataModel.swift in Sources */,
-				8439D4D320D11D33002FC9C4 /* DashboardViewController.swift in Sources */,
-				843C683B20D751A100D27EB5 /* CustomTableViewCell.swift in Sources */,
+				8439D4D120D112D3002FC9C4 /* CanadaListDataModel.swift in Sources */,
 				8439D49720D10E1D002FC9C4 /* AppDelegate.swift in Sources */,
+				843C683F20E24EF200D27EB5 /* CanadaListViewController.swift in Sources */,
 				843C683720D73E4A00D27EB5 /* Extention.swift in Sources */,
-				84E1ED6920D19B3C005A9FF9 /* DashboardViewModel.swift in Sources */,
+				843C683E20E24EF200D27EB5 /* CanadaListTableViewCell.swift in Sources */,
+				84E1ED6920D19B3C005A9FF9 /* CanadaListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -862,19 +825,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		8439D49D20D10E1E002FC9C4 /* POC.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				8439D49E20D10E1E002FC9C4 /* POC.xcdatamodel */,
-			);
-			currentVersion = 8439D49E20D10E1E002FC9C4 /* POC.xcdatamodel */;
-			path = POC.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 8439D48B20D10E1B002FC9C4 /* Project object */;
 }

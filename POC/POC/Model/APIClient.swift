@@ -20,7 +20,6 @@ class APIClient: NSObject {
         }
         Alamofire.request(url).responseData { response in
             // unwrap our returned data
-     
             guard let unwrappedData = response.data else { print("Error getting data"); return }
             let responseStrInISOLatin = String(data: unwrappedData, encoding: String.Encoding.isoLatin1)
             guard let modifiedDataInUTF8Format = responseStrInISOLatin?.data(using: String.Encoding.utf8) else {

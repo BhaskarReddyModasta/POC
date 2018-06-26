@@ -7,7 +7,7 @@
 //
 
 import Foundation
-internal class CanadaDataModel {
+internal class CanadaListDataModel {
     let title               :String?
     let rowsList            :[Dictionary<String, Any>]?
     var rowsListArray:[RowsList] = [RowsList]()

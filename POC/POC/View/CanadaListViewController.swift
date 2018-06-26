@@ -1,5 +1,5 @@
 //
-//  DashboardViewController.swift
+//  CanadaListViewController.swift
 //  POC
 //
 //  Created by Admin on 13/06/18.
@@ -9,11 +9,11 @@
 import UIKit
 import SDWebImage
 
-class DashboardViewController: UIViewController {
+class CanadaListViewController: UIViewController {
 
     fileprivate let cellIdentifier = "cellid"
     fileprivate let listTableView = UITableView()
-    fileprivate var viewModel = DashBoardViewModel()
+    fileprivate var viewModel = CanadaListViewModel()
     fileprivate var refresh = UIBarButtonItem()
     
     override func viewDidLoad() {
@@ -49,15 +49,20 @@ class DashboardViewController: UIViewController {
     func configureTableView() {
         listTableView.dataSource = self
         listTableView.estimatedRowHeight = 100
+        listTableView.allowsSelection = false
         listTableView.rowHeight = UITableViewAutomaticDimension
-        listTableView.register(CustomTableViewCell.self, forCellReuseIdentifier: "cellid")
+        listTableView.register(CanadaListTableViewCell.self, forCellReuseIdentifier: "cellid")
         
         view.addSubview(listTableView)
         listTableView.translatesAutoresizingMaskIntoConstraints = false
-        listTableView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        listTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
-        listTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        listTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+
+        // below VFL constraints applied
+        var constraints = [NSLayoutConstraint]()
+        let views: [String: UIView] = ["listTableView": listTableView]
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[listTableView(0)]|", options: [], metrics: nil, views: views)
+        constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[listTableView(0)]|", options: [], metrics: nil, views: views)
+        NSLayoutConstraint.activate(constraints)
+ 
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -65,15 +70,17 @@ class DashboardViewController: UIViewController {
     }
 }
 // MARK: - UITableView Delegate and datasource
-extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
-    
+extension CanadaListViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.numberOfRowsCount()
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)  as! CustomTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)  as! CanadaListTableViewCell
         cell.backgroundColor = .white
         if let imageUrl = viewModel.getImageUrl(indexpath: indexPath){
             cell.imageViewCustom.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named:"placeHolder.png"))
@@ -83,7 +90,6 @@ extension DashboardViewController: UITableViewDataSource, UITableViewDelegate {
         cell.detailLabel.text = viewModel.getTitleAndDescription(indexpath: indexPath)
         return cell
     }
-    
     override func viewWillLayoutSubviews() {
       super.viewWillLayoutSubviews()
     }
