@@ -36,7 +36,10 @@ class CanadaListViewModel {
         return self.rowsListArray.count
     }
     func getTitleAndDescription(indexpath: IndexPath) -> String? {
-        return ("\n" + self.rowsListArray[indexpath.row].title! + "\n" + self.rowsListArray[indexpath.row].description!)
+        guard let title = self.rowsListArray[indexpath.row].title, let description = self.rowsListArray[indexpath.row].description else {
+            return ""
+        }
+        return ("\n" + title + "\n" + description)
     }
     func getImageUrl(indexpath: IndexPath) -> String? {
         return self.rowsListArray[indexpath.row].imageHref

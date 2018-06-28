@@ -18,6 +18,7 @@ class CanadaListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Set up
         navigationBarSetUp()
         makeApiRequest()
     }
@@ -25,11 +26,12 @@ class CanadaListViewController: UIViewController {
         self.navigationItem.title = "POC"
         self.navigationController?.navigationBar.backgroundColor = .lightGray
         self.view.backgroundColor = .white
-        refresh = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(self.clickButton))
+        refresh = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(self.refreshButtonAction))
         refresh.isEnabled = false
         navigationItem.rightBarButtonItems = [refresh]
     }
-    @objc func clickButton(){
+    // MARK: - Refresh Api
+    @objc func refreshButtonAction(){
         makeApiRequest()
     }
     // MARK: - Make api request
@@ -38,7 +40,7 @@ class CanadaListViewController: UIViewController {
         viewModel.getbrandsAndSubbrands(urlString: Constants().apiEndPoint) { [weak self] (isSuccess, error) in
             UIViewController.removeSpinner(spinner: sv)
             self?.refresh.isEnabled = true
-            if isSuccess! {
+            if (isSuccess)! {
                 self?.navigationItem.title = self?.viewModel.loadNavigationBarTitle()
                 self?.configureTableView()
             }else {
@@ -47,12 +49,12 @@ class CanadaListViewController: UIViewController {
         }
     }
     func configureTableView() {
+    
         listTableView.dataSource = self
         listTableView.estimatedRowHeight = 100
         listTableView.allowsSelection = false
         listTableView.rowHeight = UITableViewAutomaticDimension
         listTableView.register(CanadaListTableViewCell.self, forCellReuseIdentifier: "cellid")
-        
         view.addSubview(listTableView)
         listTableView.translatesAutoresizingMaskIntoConstraints = false
 
@@ -62,6 +64,7 @@ class CanadaListViewController: UIViewController {
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "H:|[listTableView(0)]|", options: [], metrics: nil, views: views)
         constraints += NSLayoutConstraint.constraints(withVisualFormat: "V:|[listTableView(0)]|", options: [], metrics: nil, views: views)
         NSLayoutConstraint.activate(constraints)
+        
  
     }
     override func didReceiveMemoryWarning() {
@@ -80,7 +83,9 @@ extension CanadaListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)  as! CanadaListTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)  as? CanadaListTableViewCell else {
+            return UITableViewCell()
+        }
         cell.backgroundColor = .white
         if let imageUrl = viewModel.getImageUrl(indexpath: indexPath){
             cell.imageViewCustom.sd_setImage(with: URL(string: imageUrl), placeholderImage: UIImage(named:"placeHolder.png"))

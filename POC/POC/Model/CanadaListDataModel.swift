@@ -12,8 +12,8 @@ internal class CanadaListDataModel {
     let rowsList            :[Dictionary<String, Any>]?
     var rowsListArray:[RowsList] = [RowsList]()
     init(json : Dictionary<String, Any>?) {
-        self.title      = json!["title"] as? String
-        self.rowsList   = json!["rows"] as? [Dictionary<String, Any>]
+        self.title      = json?["title"] as? String
+        self.rowsList   = json?["rows"] as? [Dictionary<String, Any>]
         for item in (self.rowsList)! {
             let value = RowsList.init(json:item)
             self.rowsListArray.append(value)

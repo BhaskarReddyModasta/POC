@@ -23,6 +23,7 @@ class CanadaListTableViewCell: UITableViewCell {
         contentView.addSubview(imageViewCustom)
         imageViewCustom.translatesAutoresizingMaskIntoConstraints = false
         imageViewCustom.heightAnchor.constraint(equalTo: imageViewCustom.widthAnchor, multiplier: 1.0/2.0).isActive = true
+        imageViewCustom.contentMode = .scaleAspectFit
         imageViewCustom.leadingAnchor.constraint(equalTo: marginGuide.leadingAnchor).isActive = true
         imageViewCustom.topAnchor.constraint(equalTo: marginGuide.topAnchor).isActive = true
         imageViewCustom.trailingAnchor.constraint(equalTo: marginGuide.trailingAnchor).isActive = true
