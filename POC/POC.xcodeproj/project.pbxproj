@@ -21,6 +21,7 @@
 		843C684220E2A5AC00D27EB5 /* aboutcanada.json in Resources */ = {isa = PBXBuildFile; fileRef = 843C684020E2A5AB00D27EB5 /* aboutcanada.json */; };
 		846E971B20E4889D00627FD0 /* CanadaModelTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E971A20E4889D00627FD0 /* CanadaModelTestCases.swift */; };
 		847D00E420D24F8300B25073 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 847D00E320D24F8000B25073 /* Utilities.swift */; };
+		84CBD38220E67BDD004FF63F /* CanadaModelTestCases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E971A20E4889D00627FD0 /* CanadaModelTestCases.swift */; };
 		84E1ED6720D19965005A9FF9 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6620D19965005A9FF9 /* APIClient.swift */; };
 		84E1ED6920D19B3C005A9FF9 /* CanadaListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84E1ED6820D19B3C005A9FF9 /* CanadaListViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -513,6 +514,7 @@
 				843C683720D73E4A00D27EB5 /* Extention.swift in Sources */,
 				843C683E20E24EF200D27EB5 /* CanadaListTableViewCell.swift in Sources */,
 				84E1ED6920D19B3C005A9FF9 /* CanadaListViewModel.swift in Sources */,
+				84CBD38220E67BDD004FF63F /* CanadaModelTestCases.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
