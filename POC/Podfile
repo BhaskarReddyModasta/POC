@@ -6,8 +6,7 @@ target 'POC' do
   use_frameworks!
 
   # Pods for POC
-   pod 'Alamofire'
-   pod 'SDWebImage', '~>3.8'
+  
   target 'POCTests' do
     inherit! :search_paths
     # Pods for testing
